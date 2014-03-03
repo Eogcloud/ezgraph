@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    -if(user!=null)
+        include navbar
+    -if(user==null)
+        include navbar-li
+    .container
+        .row
+            hr
+    include copyright

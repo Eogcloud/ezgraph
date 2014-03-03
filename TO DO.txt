@@ -1,0 +1,8 @@
+1.  Code graphing code + control panel
+2.  CSV file upload system
+3.  Replace placeholder text and images
+4.  Implement email system/Account password recovery
+5.  Fill Content in FAQ and Help
+
+small shit
+  Re-organize views into folders

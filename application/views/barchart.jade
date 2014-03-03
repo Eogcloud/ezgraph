@@ -1,0 +1,24 @@
+extends layout
+
+block appendHeader
+  link(rel='stylesheet', href='stylesheets/barchart.css')
+
+block content
+  include navbar
+  .container
+    .row
+      .col-xs-6
+        canvas(id='canvas' width="800" height="600")
+      .col-xs-2
+      .col-xs-4
+        .well
+
+  include copyright
+
+
+block appendScripts
+  script(src='js/barchart.js')
+  script
+    var barVal  = !{JSON.stringify(barValues)}
+    var barLab  = !{JSON.stringify(barLabels)}
+    var axisLab = !{JSON.stringify(axisLabels)}

@@ -1,0 +1,62 @@
+extends layout
+block content
+    include navbar-li
+    .container
+        form(method="post")#signupform-form
+            .panel.panel-default
+                .panel-heading
+                    .row
+                        .col-xs-4
+                        h1.col-xs-8
+                            span(style="font-size: 1em").glyphicon.glyphicon-pencil
+                            |&nbsp; Ezgraph Sign up
+                .panel-body
+                    .row
+                        -if(message.length>0)
+                            .col-xs-4
+                            .alert.alert-danger.col-xs-4
+                                h4=message
+                    .row
+                        br
+                    .row
+                        .col-xs-2
+                        label.col-xs-2 Email:
+                        .input-group.input-group-md.col-xs-4
+                            span.input-group-addon.glyphicon.glyphicon-envelope
+                            input(type="email", name="user", placeholder="Please Enter Email").fields.required.form-control.input-lg#emailField
+                        br
+                    .row
+                        .col-xs-2
+                        label.col-xs-2 Confirm Email:
+                        .input-group.input-group-md.col-xs-4
+                            span.input-group-addon.glyphicon.glyphicon-envelope
+                            input(type="email", name="confirmuser", placeholder="Please Confirm Email").fields.required.form-control.input-lg#confirmEmailField
+                        br
+                        br
+                        br
+                    .row
+                        .col-xs-2
+                        label.col-xs-2 Password:
+                        .input-group.input-group-md.col-xs-4
+                            span.input-group-addon.glyphicon.glyphicon-lock
+                            input(type="password", name="pass", placeholder="Please Enter Password").fields.required.form-control.input-lg#passField
+                        br
+                    .row
+                        .col-xs-2
+                        label.col-xs-2 Confirm Password:
+                        .input-group.input-group-md.col-xs-4
+                            span.input-group-addon.glyphicon.glyphicon-lock
+                            input(type="password", name="confirmpass", placeholder="Please Confirm Password").fields.required.form-control.input-lg#confirmPassField
+                        hr
+                    .row
+                        .col-xs-4
+                        button(type="submit")#createButton.btn.btn-primary.col-xs-4 Create Account
+                        hr
+                    .row
+                        .col-xs-1
+                        a(href='/login').col-xs-6 Already have an account? Log in!
+
+    include copyright
+
+block appendScripts
+    script(src="js/signup.js")

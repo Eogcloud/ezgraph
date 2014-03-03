@@ -1,0 +1,16 @@
+
+extends layout
+
+block content
+	include navbar
+	include account
+	include modals/alert
+
+block scripts
+	script(src='bootstrap/js/jquery.min.js')
+	script(src='bootstrap/js/jquery.form.js')
+	script(src='bootstrap/js/bootstrap-modal.js')
+	script(src='bootstrap/js/bootstrap-transition.js')
+	script(src='js/signup.js')
+	script(src='js/signupController.js')
+	script(src='js/accountValidator.js')

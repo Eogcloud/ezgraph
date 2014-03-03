@@ -1,0 +1,53 @@
+extends layout
+
+block appendHeader
+    link(rel='stylesheet', href='stylesheets/barchartentry.css')
+block content
+    include navbar
+    .row
+        .container
+            .row
+                .well.well-md
+                    .page-header
+                        span(style="font-size: 3em").glyphicon.glyphicon-signal.col-xs-1
+                        h2 Data Input&nbsp;
+                            small Bar Chart
+                            p.lead Please use the form below to input the bar values and names to be graphed.
+                br
+            form(method="POST" role="form")
+                #inputFields
+                    .row
+                        .col-xs-2
+                            h4 X-axis Label
+                        .col-xs-4
+                            input(type="text" name="axisLabels[]" placeholder="Enter X-axis Label").form-control
+                    .row
+                        .col-xs-2
+                            h4 Y-axis Label
+                        .col-xs-4
+                            input(type="text" name="axisLabels[]" placeholder="Enter Y-axis Label").form-control
+                    .row
+                        hr
+                    .row
+                        .col-xs-1
+                            h5
+                                span(style="font-size: 1em").glyphicon.glyphicon-signal
+                                |&nbsp;&nbsp;Bar 1
+                        .col-xs-3
+                            input(type="number" name="barValues[]" placeholder="Enter Bar Value").form-control
+                        .col-xs-3
+                            input(type="text" name="barLabels[]" placeholder="Enter Bar Label").form-control
+                br
+                .row
+
+                    .col-xs-4
+                        .btn-group
+                            button.btn.btn-primary.btn-lg(type="button" onClick="addInput('inputFields');") Add New Bar
+                            button.btn.btn-danger.btn-lg(type="button"  onClick="removeInput();") Remove Previous Bar
+                    .col-xs-3
+                    .col-xs-1
+                        button.btn.btn-success.btn-lg(type="submit" class=""). Graph it !
+    include copyright
+
+block appendScripts
+    script(src='js/barchartentry.js')

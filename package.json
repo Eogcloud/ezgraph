@@ -1,0 +1,29 @@
+{
+  "name": "EZgraph",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Eamonn O'b <eogcloud@gmail.com>",
+  "description": "Simple Graphing Application",
+  "license": "GPL",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node ezgraph.js"
+  },
+  "dependencies": {
+    "bcrypt": "latest",
+    "express": "latest",
+    "emailjs": "latest",
+    "jade": "latest",
+    "mongodb": "latest",
+    "mongoose": "latest",
+    "mongoose-validate": "latest",
+    "mocha": "latest",
+    "monk": "latest",
+    "moment": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "stylus": "latest",
+    "connect-flash": "~0.1.1"
+  }
+}

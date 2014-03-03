@@ -1,0 +1,46 @@
+extends layout
+block content
+    include navbar-li
+    .container
+        form(method="post")#login-form.col-xs-8
+            .panel.panel-default
+                .panel-heading
+                    .row
+                        .col-xs-2
+                        span(style="font-size: 2.75em; margin-top:1.25%").glyphicon.glyphicon-log-in.col-xs-2
+                        h1 EZgraph Login
+                .panel-body
+                    .row
+                        -if(message.length>0)
+                            .col-xs-2
+                            .alert.alert-danger.col-xs-4
+                                h4=message
+                    .row
+                        .col-xs-2
+                        .input-group.input-group-md.col-xs-6
+                            span.input-group-addon.glyphicon.glyphicon-envelope &nbsp; Email: &nbsp;
+                            input(type="email", name="user", placeholder="Please Enter Email").fields.required.form-control.input-lg#emailField
+                        br
+                    .row
+                        .col-xs-2
+                        .input-group.input-group-md.col-xs-6
+                            span.input-group-addon.glyphicon.glyphicon-lock &nbsp; Password:
+                            input(type="password", name="pass", placeholder="Please Enter Password").fields.required.form-control.input-lg#passField
+                        br
+                    .row
+                        .col-xs-3
+                        button(type="submit").btn.btn-primary.col-xs-4
+                            span.glyphicon.glyphicon-log-in
+                            |&nbsp; Sign in
+                    .row
+                        hr
+                    .row
+                        .col-xs-2
+                        a(href='#').col-xs-2#forgot-password Forgot Your Password?
+                        .col-xs-2
+                        a(href='/signup').col-xs-2#create-account Create An Account
+
+    include copyright
+
+block appendScripts
+    script(src='js/login.js')

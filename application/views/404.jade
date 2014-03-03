@@ -1,0 +1,19 @@
+extends layout
+block content
+    -if(user!=null)
+        include navbar
+    -if(user==null)
+        include navbar-li
+    .container.well
+        .row
+            .col-xs-4
+            h1.col-xs-4 Error: 404
+            br
+        .row
+            .col-xs-4
+            span(style="font-size: 11em").glyphicon.glyphicon-warning-sign.col-xs-4
+        .row
+            .col-xs-3
+            h2.col-xs-5 Woops, Something went wrong!
+
+    include copyright

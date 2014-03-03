@@ -1,0 +1,31 @@
+extends layout
+
+block appendHeader
+  link(rel='stylesheet', href='stylesheets/graphing.css')
+
+block content
+  include navbar
+  .container
+    .row
+      .well.col-xs-1
+        span(style="font-size: 3em").glyphicon.glyphicon-signal
+      .col-xs-5
+        .panel.panel-default
+          .panel-heading Bar Chart
+          .panel-body Lorem Ipsum
+    .row
+      .well.col-xs-1
+        span(style="font-size: 3em").glyphicon.glyphicon-signal
+      .col-xs-5
+        .panel.panel-default
+          .panel-heading Line Chart
+          .panel-body Lorem Ipsum
+    .row
+      .well.col-xs-1
+        span(style="font-size: 3em").glyphicon.glyphicon-signal
+      .col-xs-5
+        .panel.panel-default
+          .panel-heading Pie Chart
+          .panel-body Lorem Ipsum
+  include copyright
+

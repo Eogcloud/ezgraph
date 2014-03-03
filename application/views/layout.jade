@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title EZgraph | Web App
+		link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+		link(rel='stylesheet', href='stylesheets/ezgraph.css')
+		block appendHeader
+	body
+		.container-fluid
+			block content
+			.row(name="scripts")
+				block scripts
+					script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+					script(src='bootstrap/js/jquery.form.js')
+					script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+					block appendScripts
