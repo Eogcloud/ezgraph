@@ -1,9 +1,9 @@
 $( document ).ready(function(){
 
+		var canvas = document.getElementById('canvas').getContext("2d")
 		var barValues = barVal
 		var labelValues = barLab
 		var axisLabels  = axisLab
-		var canvas = document.getElementById('canvas').getContext("2d")
 		var Width = canvas.canvas.clientWidth
 		var Height = canvas.canvas.clientHeight
 		var padding = 30
