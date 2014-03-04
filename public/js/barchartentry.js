@@ -13,13 +13,13 @@ function addInput(divName){
 
           valueDiv.className = "col-xs-3";
           labelDiv.className = "col-xs-3";
-          titleLabel.className = "col-xs-1";
+          titleLabel.className = "col-xs-1 well well-sm";
           newRow.className = "row";
           newRow.id = "row"+counter;
 
           titleLabel.innerHTML = "<span style='font-size: 1em' class='glyphicon glyphicon-signal'></span>&nbsp;&nbsp;Bar "+counter;
-          valueDiv.innerHTML = "<input type='number' name='myInput[]' class='form-control' placeholder='Enter Bar Value'></input>";
-          labelDiv.innerHTML = "<input type='text' name='mylabel[]' class='form-control' placeholder='Enter Bar Label'></input>";
+          valueDiv.innerHTML = "<input style='margin-top: 5%' type='number' name='barValues[]' class='form-control' placeholder='Enter Bar Value'></input>";
+          labelDiv.innerHTML = "<input style='margin-top: 5%' type='text' name='barLabels[]' class='form-control' placeholder='Enter Bar Label'></input>";
 
           $("#"+divName).append(newRow);
           $("#"+newRow.id).append(titleLabel);

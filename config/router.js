@@ -46,10 +46,10 @@ module.exports = function(app, passport){
     //==========================//
         function loggedIn(req, res, next) {
             if (req.isAuthenticated()){
-                return next();
+                return next()
             }
             else{
-                res.redirect('/login');
+                res.redirect('/login')
             }
         }
 }

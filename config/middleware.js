@@ -1,7 +1,7 @@
 module.exports = function (app, express, path, passport){
 	var flash = require('connect-flash')
 
-	app.use(express.favicon('../public/images/favicon.ico'))
+	app.use(express.favicon('images/favicon.ico'))
 	app.use(express.logger('dev'))
 	app.use(express.json())
 	app.use(express.urlencoded())
@@ -14,8 +14,6 @@ module.exports = function (app, express, path, passport){
 	app.use(express.static(App.appPath('public')))
 	app.use(passport.initialize())
 	app.use(passport.session())
-
-	if (App.env === 'developemnt'){
-  		app.use( express.errorHandler())
-	}
+  	app.use(express.errorHandler())
+  	app.locals.pretty = true;
  }

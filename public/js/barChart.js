@@ -3,7 +3,7 @@ $( document ).ready(function(){
 		var barValues = barVal
 		var labelValues = barLab
 		var axisLabels  = axisLab
-		var canvas = $("#canvas").getContext("2d")
+		var canvas = document.getElementById('canvas').getContext("2d")
 		var Width = canvas.canvas.clientWidth
 		var Height = canvas.canvas.clientHeight
 		var padding = 30
@@ -11,7 +11,7 @@ $( document ).ready(function(){
 		function debugPrintInput(){
 			console.debug(barValues)
 			console.debug(labelValues)
-			console.debug(axisLaels)
+			console.debug(axisLabels)
 		}
 
 		function drawBackground(color){
