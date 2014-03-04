@@ -17,26 +17,25 @@ block content
             form(method="POST" role="form")
                 #inputFields
                     .row
-                        .col-xs-2
-                            h4 X-axis Label
-                        .col-xs-4
-                            input(type="text" name="axisLabels[]" placeholder="Enter X-axis Label").form-control
+                            .col-xs-2
+                                h4.well.well-sm X-axis Label
+                            .col-xs-4
+                                input(style="margin-top: 3.5%" type="text" name="axisLabels[]" placeholder="Enter X-axis Label").form-control
                     .row
                         .col-xs-2
-                            h4 Y-axis Label
+                            h4.well.well-sm Y-axis Label
                         .col-xs-4
-                            input(type="text" name="axisLabels[]" placeholder="Enter Y-axis Label").form-control
+                            input(style="margin-top: 3.5%" type="text" name="axisLabels[]" placeholder="Enter Y-axis Label").form-control
                     .row
                         hr
                     .row
-                        .col-xs-1
-                            h5
+                        h5.well.well-sm.col-xs-1
                                 span(style="font-size: 1em").glyphicon.glyphicon-signal
                                 |&nbsp;&nbsp;Bar 1
                         .col-xs-3
-                            input(type="number" name="barValues[]" placeholder="Enter Bar Value").form-control
+                            input(style="margin-top: 5%" type="number" name="barValues[]" placeholder="Enter Bar Value").form-control
                         .col-xs-3
-                            input(type="text" name="barLabels[]" placeholder="Enter Bar Label").form-control
+                            input(style="margin-top: 5%" type="text" name="barLabels[]" placeholder="Enter Bar Label").form-control
                 br
                 .row
 
