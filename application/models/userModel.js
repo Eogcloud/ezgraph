@@ -17,7 +17,8 @@ var userDataModel = new schema({
                         required: true,
                         validate: [checkLength, 'The Password is too short! Passwords must be at least '+REQ_PASS_LENGTH+' characters!']
                     },
-    savedGraphs:{}
+    savedGraphs:{},
+    uploadedFiles:{}
 })
 
 userDataModel.methods.generateHash = function(password) {

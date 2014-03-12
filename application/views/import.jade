@@ -3,6 +3,19 @@ extends layout
 block content
     include navbar
     .container
-        .row
-            hr
+        .panel.panel-default
+            .panel-heading
+                h1
+                    span(style="font-size: 1em").glyphicon.glyphicon-floppy-open
+                    |&nbsp;File Upload
+            .panel-body
+                .row
+                    form(action="Import" method="post", enctype="multipart/form-data")
+                        input(type="file" name='csvFile').col-xs-3
+                        .col-xs-1
+                        button.btn.btn-success.btn-lg(type="submit" class="").col-xs-2 Upload File
+
     include copyright
+
+block appendScripts
+    script(src='public/jquery.csv.js')

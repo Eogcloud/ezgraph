@@ -8,10 +8,21 @@ block content
   .container
     .row
       .well.col-xs-1
-        span(style="font-size: 3em").glyphicon.glyphicon-signal
+        span(style="font-size: 3em" href='barchartentry').glyphicon.glyphicon-signal
       .col-xs-5
         .panel.panel-default
-          .panel-heading Bar Chart
+          .panel-heading
+            h3
+              a(href='barchartentry') Bar Chart
+          .panel-body Lorem Ipsum
+    .row
+      .well.col-xs-1
+        span(style="font-size: 3em" href='barchartentry').glyphicon.glyphicon-signal
+      .col-xs-5
+        .panel.panel-default
+          .panel-heading
+            h3
+              a(href='piechartentry') Pie Chart
           .panel-body Lorem Ipsum
     .row
       .well.col-xs-1
@@ -19,13 +30,6 @@ block content
       .col-xs-5
         .panel.panel-default
           .panel-heading Line Chart
-          .panel-body Lorem Ipsum
-    .row
-      .well.col-xs-1
-        span(style="font-size: 3em").glyphicon.glyphicon-signal
-      .col-xs-5
-        .panel.panel-default
-          .panel-heading Pie Chart
           .panel-body Lorem Ipsum
   include copyright
 

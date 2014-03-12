@@ -1,0 +1,23 @@
+extends layout
+
+block appendHeader
+  link(rel='stylesheet', href='stylesheets/barchart.css')
+
+block content
+  include navbar
+  .container
+    .row
+      .col-xs-6
+        canvas(id='canvas' width="400" height="300")
+      .col-xs-2
+      .col-xs-4
+        .well
+
+  include copyright
+
+block appendScripts
+  script(src='js/pieChart.js')
+  script.
+    var pieVal    =   !{JSON.stringify(pieValues)}
+    var pieLab    =   !{JSON.stringify(pieLabels)}
+    var titleLab  =   !{JSON.stringify(pieTitle)}

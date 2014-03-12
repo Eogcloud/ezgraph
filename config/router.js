@@ -28,8 +28,11 @@ module.exports = function(app, passport){
     //==========================//
         app.get('/graphing', loggedIn, graphRouteHandlers.getGraphing)
         app.get('/barchartentry', loggedIn, graphRouteHandlers.getBarchartentry)
-        app.get('/import', loggedIn, graphRouteHandlers.getImport)
         app.post('/barchartentry', graphRouteHandlers.postBarchartentry)
+        app.get('/import', loggedIn, graphRouteHandlers.getImport)
+        app.get('/piechartentry', loggedIn, graphRouteHandlers.getPieChartEntry)
+        app.post('/piechartentry', loggedIn, graphRouteHandlers.postPieChartEntry)
+        app.post('/import', loggedIn, graphRouteHandlers.postImport)
 
       //==========================//
      //       Basic Routing      //

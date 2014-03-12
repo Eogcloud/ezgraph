@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    include navbar
+    .row
+        .container
+            .row
+                .well.well-md
+                    .page-header
+                        span(style="font-size: 3em").glyphicon.glyphicon-signal.col-xs-1
+                        h2 Data Input&nbsp;
+                            small Pie Chart
+                            p.lead Please use the form below to input the Pie Chart Sector values and names.
+                br
+            form(method="POST" role="form")
+                #inputFields
+                    .row
+                            .col-xs-2
+                                h4.well.well-sm Chart Title
+                            .col-xs-4
+                                input(style="margin-top: 3.5%" type="text" name="pietitle[]" placeholder="Enter title Label").form-control
+                    .row
+                        hr
+                    .row
+                        h5.well.well-sm.col-xs-1
+                                span(style="font-size: 1em").glyphicon.glyphicon-signal
+                                |&nbsp;&nbsp;Sector 1
+                        .col-xs-3
+                            input(style="margin-top: 5%" type="number" name="pieValues[]" placeholder="Enter Sector Value").form-control
+                        .col-xs-3
+                            input(style="margin-top: 5%" type="text" name="pieLabels[]" placeholder="Enter Sector Label").form-control
+                br
+                .row
+                    .col-xs-4
+                        .btn-group
+                            button.btn.btn-primary.btn.md(type="button" onClick="addInput('inputFields');") Add New Sector
+                            button.btn.btn-danger.btn-md(type="button"  onClick="removeInput();") Remove Previous Sector
+                    .col-xs-1
+                        button.btn.btn-success.btn-lg(type="submit" class="") Graph it
+    include copyright
+
+block appendScripts
+    script(src='js/pieChartEntry.js')
