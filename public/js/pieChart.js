@@ -1,5 +1,3 @@
-$( document ).ready(function(){
-
         //canvas context and user data
         var canvas = document.getElementById('canvas').getContext("2d")
         var pieValues = pieVal
@@ -12,15 +10,14 @@ $( document ).ready(function(){
 
         //user options object
         var userOptions = {
-            colors: [],
-            titleColor:[],
+            colors: null,
+            titleColor: null,
+            font: null
          }
 
         draw()
 
         function draw(){
-            debugPrintInput()
-
             for (var i = 0; i < valuesInDegrees.length; i++) {
                 drawSegment(i)
                 drawSegmentLabel(i)
@@ -39,12 +36,10 @@ $( document ).ready(function(){
             for(var key in data){
                 sumTotal+=parseInt(data[key])
             }
-            console.log(sumTotal)
             var valuesInDegrees = new Array()
             for(var i=0; i<data.length; i++){
                 valuesInDegrees[i]=360*(data[i]/sumTotal)
             }
-            console.log(valuesInDegrees)
             return valuesInDegrees
         }
 
@@ -70,10 +65,12 @@ $( document ).ready(function(){
                             false)
             canvas.closePath()
 
-            if (userOptions.colors[i] == typeof "string"){
-                canvas.fillStyle = userOptions.colors[i]
+            if (userOptions.colors != null){
+                console.log("worked")
+                canvas.fillStyle = "#"+userOptions.colors[i]
             }
             else{
+                console.log("didnt work")
                 canvas.fillStyle = defaultColors[i]
             }
 
@@ -131,4 +128,12 @@ $( document ).ready(function(){
             canvas.fillText(pieTitles[0], x, y)
             canvas.restore()
         }
-})
+
+        function reRender(){
+            var usercolors = new Array()
+            for(var i=0; i<pieValues.length; i++){
+                usercolors[i] = $('#sectorColor'+i).val()
+            }
+            userOptions.colors = usercolors
+            draw()
+        }

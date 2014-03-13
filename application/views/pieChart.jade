@@ -16,28 +16,34 @@ block content
                 span(style="font-size: 2em; margin-top: 3%").glyphicon.glyphicon-cog
                 |&nbsp;&nbsp;Graph Controls
           .panel-body
-            div#colorFields
-            .row
-              .col-xs-1
-              .input-group.col-xs-4
-                span.input-group-addon Hide Title
-                input(type="checkbox").form-control
+              each val, index in pieLabels
+                .row
+                  .col-xs-1
+                  .input-group.input-group-sm.col-xs-8
+                    span.input-group-addon= val +' Color'
+                    input.form-control.color(name='userColors[]' id='sectorColor'+index)
+                    br
+              .row
+                .col-xs-1
+                .input-group.col-xs-4
+                  span.input-group-addon Hide Title
+                  input(type="checkbox" name="hideTitle").form-control
               br
-            .row
-              .col-xs-1
-              .input-group.col-xs-4
-                span.input-group-addon Font
-                select.form-control
-                  option(value="")
-                  option(value="")
-                  option(value="")
-                  option(value="")
-                  option(value="")
-                  option(value="")
-            hr
-            .row
-              .col-xs-1
-              button.btn.btn-lg.btn-success Render changes
+              .row
+                .col-xs-1
+                .input-group.col-xs-4
+                  span.input-group-addon Font
+                  select.form-control
+                    option(value="Arial") Arial
+                    option(value="Verdana") Verdana
+                    option(value="Times New Roman") Times New Roman
+                    option(value="Courier New") Courier New
+                    option(value="serif") Serif
+                    option(value="sans-serif") Sans-serif
+              hr
+              .row
+                .col-xs-1
+                button(type="button" onClick="reRender();").btn.btn-lg.btn-success Render changes
             br
 
   include copyright
@@ -49,4 +55,3 @@ block appendScripts
     var titleLab  =   !{JSON.stringify(pieTitle)}
   script(src='js/pieChart.js')
   script(src="js/jscolor/jscolor.js")
-  script(src="js/graphControl.js")

@@ -33,6 +33,7 @@ module.exports = function(app, passport){
         app.get('/piechartentry', loggedIn, graphRouteHandlers.getPieChartEntry)
         app.post('/piechartentry', loggedIn, graphRouteHandlers.postPieChartEntry)
         app.post('/import', loggedIn, graphRouteHandlers.postImport)
+        app.post('/pieChart', loggedIn, graphRouteHandlers.postPieChart)
 
       //==========================//
      //       Basic Routing      //
