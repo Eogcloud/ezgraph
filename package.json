@@ -24,6 +24,7 @@
     "passport": "latest",
     "passport-local": "latest",
     "stylus": "latest",
-    "connect-flash": "~0.1.1"
+    "connect-flash": "~0.1.1",
+    "csvtojson": "~0.1.7"
   }
 }

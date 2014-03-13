@@ -5,19 +5,48 @@ block appendHeader
 
 block content
   include navbar
-  .container
-    .row
+  .container-fluid
       .col-xs-6
-        canvas(id='canvas' width="400" height="300")
-      .col-xs-2
-      .col-xs-4
-        .well
+        canvas(id='canvas' width="640" height="640")
+      .col-xs-6
+        .panel.panel-default
+          .panel-heading
+            .panel-title
+              h2
+                span(style="font-size: 2em; margin-top: 3%").glyphicon.glyphicon-cog
+                |&nbsp;&nbsp;Graph Controls
+          .panel-body
+            div#colorFields
+            .row
+              .col-xs-1
+              .input-group.col-xs-4
+                span.input-group-addon Hide Title
+                input(type="checkbox").form-control
+              br
+            .row
+              .col-xs-1
+              .input-group.col-xs-4
+                span.input-group-addon Font
+                select.form-control
+                  option(value="")
+                  option(value="")
+                  option(value="")
+                  option(value="")
+                  option(value="")
+                  option(value="")
+            hr
+            .row
+              .col-xs-1
+              button.btn.btn-lg.btn-success Render changes
+            br
 
   include copyright
 
 block appendScripts
-  script(src='js/pieChart.js')
   script.
     var pieVal    =   !{JSON.stringify(pieValues)}
     var pieLab    =   !{JSON.stringify(pieLabels)}
     var titleLab  =   !{JSON.stringify(pieTitle)}
+  script(src='js/pieChart.js')
+  script(src="js/jscolor/jscolor.js")
+  script(src="js/graphControl.js")

@@ -1,8 +1,9 @@
-1.  Code graphing code + control panel
-2.  CSV file upload system
+1.  Complete control panel for Pie Chart, get Bar Chart to work
+2.  Fix CSV saving, create code to allow graphing from saved CSV data in the DB
 3.  Replace placeholder text and images
 4.  Implement email system/Account password recovery
 5.  Fill Content in FAQ and Help
+6.  fix broken stylesheets
 
-small shit
-  Re-organize views into folders
+small stuff
+  Re-organize views into relevant folders

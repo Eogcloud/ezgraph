@@ -15,12 +15,15 @@ function getImport(req, res){
 }
 
 function postImport(req, res){
-    console.log(req.files)
     if (fileManager.verifyFileTypeCSV(req.files.csvFile.type)){
-
+        fileManager.saveFileDataCSV(req.files.csvFile.ws.path, req.user.email, req.user.hashedPassword, userModel)
+        res.redirect('myImports')
     }
     else{
-
+        res.render('import', {
+                                title: 'EZgraph | Import',
+                                user: req.user,
+                                showError: true})
     }
 }
 
