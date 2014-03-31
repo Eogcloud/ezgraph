@@ -1,0 +1,103 @@
+extends layout
+
+block appendHeader
+  link(rel='stylesheet', href='stylesheets/barchart.css')
+
+block content
+  include navbar
+  .container-fluid
+        .col-xs-6
+          canvas(id='canvas' width="640" height="640")
+            img(id="canvasImg" alt="Right click to save me!")
+        .col-xs-6
+          .panel.panel-default
+            .panel-heading
+              .panel-title
+                h2
+                  span(style="font-size: 2em; margin-top: 3%").glyphicon.glyphicon-cog
+                  |&nbsp;&nbsp;Graph Controls
+            .panel-body
+              each val, index in axisYValues
+                .row
+                  .col-xs-1
+                  .input-group.input-group-sm.col-xs-8
+                    span.input-group-addon= 'Point '+index+' Color'
+                    input.form-control.color(id='pointColor'+index)
+              br
+              .row
+                .col-xs-1
+                .input-group.input-group-sm.col-xs-8
+                  span.input-group-addon Axis Label Color
+                  input.form-control.color#axisLabelColor
+              br
+              .row
+                .col-xs-1
+                .input-group.col-xs-8
+                  span.input-group-addon Axis Label Font
+                  select.form-control#axisLabelFont
+                    option(value="Arial") Arial
+                    option(value="Verdana") Verdana
+                    option(value="Times New Roman") Times New Roman
+                    option(value="Courier New") Courier New
+                    option(value="serif") Serif
+                    option(value="sans-serif") Sans-serif
+              br
+              .row
+                .col-xs-1
+                .input-group.input-group-sm.col-xs-8
+                  span.input-group-addon Title Color'
+                  input.form-control.color#titleColor
+              br
+              .row
+                .col-xs-1
+                .input-group.col-xs-8
+                  span.input-group-addon Title Font
+                  select.form-control#titleFont
+                    option(value="Arial") Arial
+                    option(value="Verdana") Verdana
+                    option(value="Times New Roman") Times New Roman
+                    option(value="Courier New") Courier New
+                    option(value="serif") Serif
+                    option(value="sans-serif") Sans-serif
+              br
+              .row
+                .col-xs-1
+                .input-group.col-xs-4
+                  span.input-group-addon Hide Title
+                  input(type="checkbox").form-control#hideTitle
+              br
+              .row
+                .col-xs-1
+                .input-group.col-xs-4
+                  span.input-group-addon Hide Shadows
+                  input(type="checkbox").form-control#hideShadows
+              br
+              .row
+                .col-xs-1
+                .input-group.col-xs-4
+                  span.input-group-addon Hide Axis Labels
+                  input(type="checkbox").form-control#hideAxisLabels
+              br
+              .row
+                .col-xs-1
+                .input-group.col-xs-4
+                  span.input-group-addon Hide Axes
+                  input(type="checkbox").form-control#hideAxes
+              hr
+              .row
+                .col-xs-1
+                button(type="button" onClick="reRender();").btn.btn-lg.btn-success Render changes
+              br
+              .row
+                .col-xs-1
+                button(type="button" onClick="saveImage();").btn.btn-lg.btn-success Save Image
+  include copyright
+
+block appendScripts
+  script.
+      var scatterYValues = !{JSON.stringify(axisYValues)}
+      var scatterXValues = !{JSON.stringify(axisXValues)}
+      var axisLabels = !{JSON.stringify(scatterAxisLabels)}
+      var scatterTitle = !{JSON.stringify(titleLabel)}
+  script(src='./js/scatterPlot.js')
+  script(src="js/jscolor/jscolor.js")
