@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    -if(user!=null)
+        include navbar
+    -if(user==null)
+        include navbar-li
+    .container
+        .row
+            .col-xs-2
+            .well.well-lg.col-xs-6
+                form(method="POST" role="form")
+                    h2
+                        span.glyphicon.glyphicon-list-alt
+                        |&nbsp;EZgraph Bug Report
+                    br
+                    input(type="email" placeholder="Your Email").form-control
+                    input(type="text" placeholder="Report title").form-control
+                    br
+                    textarea(id="message" name="message" placeholder="Please detail the nature of the bug." required="required" data-minlength="20").form-control
+                    br
+                    button.btn.btn-success.btn-lg(type="submit" class="") Report Bug
+    include copyright

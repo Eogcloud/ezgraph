@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    -if(user!=null)
+        include navbar
+    -if(user==null)
+        include navbar-li
+    .container
+        .row
+            .col-xs-2
+            .well.well-lg.col-xs-6
+                form(method="POST" role="form")
+                    h2 
+                        span.glyphicon.glyphicon-envelope
+                        |&nbsp;Contact Us
+                    br
+                    .input-group
+                        span.input-group-addon @
+                        input(type="email" placeholder="Your Email").form-control
+                    br
+                    textarea(id="message" name="message" placeholder="Your message must be greater than 20 charcters" required="required" data-minlength="20").form-control
+                    br
+                    button.btn.btn-success.btn-lg(type="submit" class="") Send
+    include copyright
