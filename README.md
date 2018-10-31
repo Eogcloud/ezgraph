@@ -18,5 +18,4 @@ $ npm install
 
 ### Dependencies
 
-#### Contact
-Eamonn O Broithe - eogcloud@gmail.com
+
